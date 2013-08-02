@@ -1,0 +1,445 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+    <div id="step0" class="step slide" data-x="-1000" data-y="-1500">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p><b><span style= "font-size: 45px;">Aggregation Framework in Mongodb</span></b></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <span style= "float: right;">-Aditya Shedge </span>
+    </div>    
+    <div id="step1" class="step slide" data-x="0" data-y="-1500">
+        <h1> <b>Introduction to MongoDB </b> </h1>
+        <hr>
+        <br>
+        <li>MongoDB is a document-oriented DBMS developed and supported by 10gen.</li>
+        <br>  
+        <li>MongoDB is implemented in C++.</li>
+        <br>  
+        <li>MongoDB uses BSON which could be thought of as a binary representation of JSON (JavaScript Object Notation) documents.</li>
+        <br>  
+        <li>BSON is a binary format in which zero or more key/value pairs are stored as a single entity.</li>
+        <br>  
+        <li>MongoDB uses NOSQL.</li>
+        <br>  
+        <li>MongoDB uses dynamic schemas.</li>
+    </div>
+
+    <div id="step2" class="step slide" data-x="1000" data-y="-1500">
+        <h1> <b>Database </b> </h1>
+        <hr>
+        <br>  
+        <li>A MongoDB database stores its data in collections.</li>
+        <br>  
+            <li style= "margin-left: 5%;">Collection -> RDBMS Table</li>
+        <br>  
+            <li style= "margin-left: 5%;">Document-> Row in a Table</li>
+        <br>  
+            <li style= "margin-left: 5%;">Value/field-> column in a Table</li>
+        <br>  
+            <li style= "margin-left: 5%;">_id-> primary key in a Table</li>
+    </div>    
+
+    <div id="step3" class="step slide" data-x="2000" data-y="-1500">
+        <h1> <b>Querying </b> </h1>
+        <hr>
+        <br>
+        <li>find()</li>
+        <br>
+        <li>db.collection.find(query, projection)</li>
+        <br>
+        <li>The cursor returns the first batch of 20 matching documents by default.</li>
+        <br>
+        <li>Iterate with 'it' command</li>
+    </div>    
+
+    <div id="step4" class="step slide" data-x="3000" data-y="-1500">
+        <h1> <b>Aggregation</b> </h1>
+        <hr>
+        <br>
+        <li>map-reduce.</li> 
+        <br>
+        <li>aggregation framework.</li>
+        <br>
+        <li>Methods and commands.</li> 
+        <li style= "margin-left: 5%;">count</li>
+        <li style= "margin-left: 5%;">distinct</li>
+        <li style= "margin-left: 5%;">group</li>
+        <br>
+    </div>    
+
+    <div id="step5" class="step slide" data-x="4000" data-y="-1500">
+        <h1> <b>Aggregation Framework</b> </h1>
+        <hr>
+        <br>
+        <li>A framework to provide “group-by” and aggregate functionality without the overhead of map-reduce.</li> 
+        <br>
+        <li>No JavaScript required</li>
+        <br>
+        <li>C++ implementation so better performance than JavaScript</li>
+        <br>
+        <li>Expression evaluation</li>
+        <br>
+        <li>Return computed values</li>
+        <br>
+        <li>Framework so we can add new operations easily.</li>
+    </div>    
+
+    <div id="step6" class="step slide" data-x="5000" data-y="-1500">
+        <h1> <b>Framework Components</b> </h1>
+        <hr>
+        <br>
+        <li>pipeline</li>
+        <br>
+        <li>expressions</li>
+    </div>    
+    
+    <div id="step7" class="step slide" data-x="6000" data-y="-1500">
+        <h1> <b>Pipeline </b> </h1>
+        <hr>
+        <br>
+        <li>Documents from a collection pass through an aggregation pipeline.</li>
+        <br>
+        <li>Unix-like pipeline but for documents.</li>
+        <br>
+        <li>Pipeline streams MongoDB documents from one pipeline operator to the next to process the documents.</li>
+        <br>
+        <li>Passes all matching documents into the “top” of the pipeline.</li>
+        <br>
+        <li>Pipeline operators can be repeated in the pipe.</li>
+    </div>    
+
+    <div id="step8" class="step slide" data-x="7000" data-y="-1500">
+        <h1> <b>Pipeline Operators</b> </h1>
+        <hr>
+        <br>
+        <li>$project</li>
+        <li>$match</li>
+        <li>$limit</li>
+        <li>$skip</li>
+        <li>$unwind</li>
+        <li>$group</li>
+        <li>$sort</li>
+        <li>$geoNear</li>
+    </div>    
+    
+    <div id="step9" class="step slide" data-x="8000" data-y="-1500">
+        <h1> <b>Match and Project Examples</b> </h1>
+        <hr>
+        <br>
+        <li>
+        db.users.insert({roles: ['manager', 'engineer', 'worker']})
+        db.users.insert({roles: ['manager', 'salesman', 'customer']})
+        db.users.insert({roles: ['manager', 'employee', 'customer']})
+        </li>
+        <br>
+        <li>db.users.find({roles: {$in: ['customer']}})</li>
+        <br>
+        <li>db.users.aggregate([{$match: {roles: 'customer'}}, {$project: {roles: 1, _id: 0}}])</li>
+        <br>
+    </div>    
+    
+    <div id="step10" class="step slide" data-x="9000" data-y="-1500">
+        <h1> <b>Group, Limit, Skip, Sort Examples</b> </h1>
+        <hr>
+        <br>
+        <li>db.zipcodes.aggregate({$limit: 10})</li>
+        <br>
+        <li>db.zipcodes.aggregate({$skip: 29400})</li>
+        <br>
+        <li>db.zipcodes.aggregate({$match: {pop: {$gte: 1000, $lt:1100}}},{$group: {_id: "$state", total_pop: {$sum: "$pop"}}}, {$sort: {total_pop: 1}})</li>
+        <br>
+        <li>db.zipcodes.aggregate({$match: {pop: {$gte: 1000, $lt:1100}}},{$group: {_id: {state: "$state", city: "$city", pop: "$pop"}}}, {$limit: 10})</li>
+        <br>
+        <li>db.zipcodes.aggregate({$match: {pop: {$gte: 1000, $lt:1100}}},{$group: {_id: "$state", totpop: {$sum: "$pop"},average: {$avg: "$pop"}}}, {$limit: 10})</li>
+    </div>    
+    
+    <div id="step11" class="step slide" data-x="10000" data-y="-1500">
+        <h1> <b>Unwind</b> </h1>
+        <hr>
+        <br>
+        <li>Unwind peels off the elements of an array individually, and returns a stream of documents.</li> 
+        <br>
+        <li>$unwind returns one document for every member of the unwound array within every source document.</li>
+        <br>
+        <li>db.users.insert({roles: ['manager', 'engineer', 'worker']})</li>
+        <br>
+        <li>db.users.aggregate({$unwind: "$roles"},{$group: {_id: "$roles", sum: {$sum: 1}}})</li>
+    </div>
+    
+    <div id="step12" class="step slide" data-x="11000" data-y="-1500">
+        <h1> <b> Expression</b> </h1>
+        <hr>
+        <br>
+        <li>$group Operators</li>
+        <br>
+        <li>Boolean Operators</li>
+        <br>
+        <li>Comparison Operators</li>
+        <br>
+        <li>Arithmetic Operators</li>
+        <br>
+        <li>String Operators</li>
+        <br>
+        <li>Date Operators</li>
+        <br>
+        <li>Conditional Expressions</li>
+    </div>
+
+    <div id="step13" class="step slide" data-x="12000" data-y="-1500">
+        <h1> <b>Optimizing Aggregation Performance</b> </h1>
+        <hr>
+        <br>
+        <li>$match,
+            $sort,
+            $limit,
+            $skip.
+        </li>
+        <br>
+        <li>Can also use an index when placed before:
+            $project,
+            $unwind,
+            $group.
+        </li>
+        <br>
+        <li>$sort + $skip + $limit Sequence Optimization</li>
+        <br>
+        <li>The $limit value has increased to the sum of the initial value and the $skip value.</li>
+        <br>
+        <li>
+            { $skip: 5 },
+            { $limit: 10},
+            { $skip: 2 }
+        </li>
+        <br>
+        <li>
+            { $limit: 15},
+            { $skip: 5 },
+            { $skip: 2 }
+        </li>
+        <br>
+        <li>Optimizer adds the adjacent values: {$limit: 15}, {$skip: 7}</li>
+    </div>
+
+    <div id="step14" class="step slide" data-x="13000" data-y="-1500">
+        <h1> <b>MapReduce Performance in MongoDB</b> </h1>
+        <hr>
+        <br>
+        <li>Most of the performance limitations for Map/Reduce remain in MongoDB version 2.2.</li>
+        <br>
+        <li>The Map/Reduce engine in version 2.2 requires that every record get converted from BSON to JSON, the actual calculations are performed using the embedded JavaScript engine (which is slow), and there still is a single global JavaScript lock, which only allows a single JavaScript thread to run at a single time.     
+        </li>
+        <br>
+        <li>The SpiderMonkey JavaScript engine has been replaced by the V8 JavaScript engine in version 2.4, and there is no longer a global JavaScript lock, which means that multiple Map/Reduce threads can run concurrently.</li>
+    </div>
+
+    <div id="step15" class="step slide" data-x="14000" data-y="-1500">
+        <h1> <b>MapReduce vs Aggregation Framework</b> </h1>
+        <hr>
+        <br>
+        <strong>The Map/Reduce engine is still considerably slower than the aggregation framework, for two main reasons:</strong>
+        <br>
+        <br>
+        <li>The JavaScript engine is interpreted, while the Aggregation Framework runs compiled C++ code</li>
+        <br>
+        <li>The JavaScript engine still requires that every document being examined get converted from BSON to JSON.</li>
+        <br>
+        <li>If you're saving the output in a collection, then result set must then be converted from JSON back to BSON.</li>
+    </div>
+
+    <div id="step16" class="step slide" data-x="15000" data-y="-1500">
+        <h1> <b>Map Reduce Example</b> </h1>
+        <hr>
+        <br>
+        > var mapFn = function() {
+        <br>...                        emit(this.state, this.pop);
+        <br>...                    };
+
+        <br>
+        <br> var reduceFn = function(key, values) {
+        <br>...                           return Array.sum(values);
+        <br>...                       };
+        
+        <br>
+        <br> db.zipcodes.mapReduce(
+        <br>...                      mapFn,
+        <br>...                      reduceFn,
+        <br>...                      { out: "mrresult" }
+        <br>...                    );
+        <br>
+    </div>
+
+    <div id="step17" class="step slide" data-x="16000" data-y="-1500">
+        <h1> <b>MapReduce Result</b> </h1>
+        <hr>
+        <br>
+        <br>{
+        <br>"result" : "mrresult",
+        <br>"timeMillis" : 1111,
+        <br>"counts" : {
+        <br>         "input" : 29467,
+        <br>         "emit" : 29467,
+        <br>         "reduce" : 345,
+        <br>         "output" : 51
+        <br>},
+        <br>"ok" : 1,
+        <br>}
+    </div>
+
+    <div id="step18" class="step slide" data-x="17000" data-y="-1500">
+        <h1> <b>Benchmark Results</b> </h1>
+        <hr>
+        <br> 
+        <strong>MAPREDUCE</strong>
+        <br>2.0.0-p195 :014 > mapFn = "function() {emit(this.state, this.pop);};"
+        <br> => "function() {emit(this.state, this.pop);};" 
+        <br> 2.0.0-p195 :015 > 
+        <br> 2.0.0-p195 :016 >   reduceFn = "function(key, values) {return Array.sum(values);};"
+        <br> => "function(key, values) {return Array.sum(values);};" 
+        <br> 2.0.0-p195 :017 > 
+        <br> 2.0.0-p195 :018 >   Benchmark.realtime{coll.map_reduce(mapFn,reduceFn,{out: "mrresult" })}
+        <br> => 0.645419389 
+    </div>
+
+    <div id="step19" class="step slide" data-x="18000" data-y="-1500">
+        <h1> <b>Benchmark Results </b> </h1>
+        <hr>
+        <br>
+        <br><strong>AGGREGATION FRAMEWORK</strong>
+        2.0.0p195 :084 > Benchmark.realtime{coll.aggregate([{"$group"=> {"_id"=> "$state", "total"=> {"$sum"=> "$pop"}}}])}
+        <br>=> 0.055333919 
+    </div>
+        
+    <div id="step20" class="step slide" data-x="19000" data-y="-1500">
+        <h1> <b>Benchmark Comparison</b> </h1>
+        <hr>
+        Performing counting of elements belonging to a group to check performance.
+        In this case counting number of cities in a state.
+        <br><strong>MAPREDUCE:</strong>
+        <br>2.0.0p195 :014 >   mapFn = "function() {emit(this.state, 1);};"
+        <br> => "function() {emit(this.state, 1);};" 
+        <br>2.0.0p195 :016 >   reduceFn = "function(key, values) {return Array.sum(values);};"
+        <br>=> "function(key, values) {return Array.sum(values);};" 
+        <br>2.0.0p195 :018 >   Benchmark.realtime{collect.map_reduce(mapFn,reduceFn,{out: "mrresult" })}
+        <br><strong>AGGREGATION FRAMEWORK: </strong>
+        <br>2.0.0p195 :006 > Benchmark.realtime{collect.aggregate([{"$group"=> {"_id"=> "$state", "total"=> {"$sum"=> 1}}}])}
+
+    </div>
+
+    <div id="step21" class="step slide" data-x="20000" data-y="-1500">
+        <h1> <b>Benchmark Comparison</b> </h1>
+        <hr>
+        <br>After inserting 100k records
+        <br>
+        <br><strong>MAPREDUCE: </strong>
+        <br>=> 2.791563706
+        <br>=> 2.990042183
+
+        <br><strong>AGGREGATION FRAMEWORK: </strong>
+        <br>=> 0.202436786
+        <br>=> 0.246570135 (cache cleaned)
+        <br>
+        
+        <br>After inserting 500k records
+        <br><strong>MAPREDUCE: </strong>
+        <br>=> 13.038614068
+
+        <br><strong>AGGREGATION FRAMEWORK: </strong>
+        <br>=> 0.671006352 
+        <br>=> 0.922359733 (cache cleaned)
+    </div>
+        
+    <div id="step22" class="step slide" data-x="21000" data-y="-1500">
+        <h1> <b> Limitations of Aggregation Framework</b> </h1>
+        <hr>
+        <br>
+        <li>Pipeline cannot operate on values of the following types: Symbol, MinKey, MaxKey, DBRef, Code, CodeWScope.</li>
+        <br>
+        <li>Output from the pipeline can only contain 16 megabytes. If result set exceeds this limit, then aggregate command produces an error.</li>
+        <br>
+        <li>If any single aggregation operation consumes more than 10 percent of system RAM the operation will produce an error.</li>
+    </div>    
+
+    <div id="step23" class="step slide" data-x="22000" data-y="-1500">
+        <h1> <b>What's new in version 2.4: $geoNear </b> </h1>
+        <hr>
+        <br>
+        <li>Introduced in MongoDB version 2.4</li>
+        <br>
+        <li>$geoNear returns documents in order of nearest to farthest from a specified point and pass the documents through the aggregation pipeline.</li>
+        <br>
+        <li>You can only use $geoNear as the first stage of a pipeline.</li>
+        <br>
+        <li>You must include the distanceField option. The distanceField option specifies the field that will contain the calculated distance.</li>
+        <br>
+        <li>The collection must have a geospatial index.</li>
+    </div>
+
+    <div id="step24" class="step slide" data-x="23000" data-y="-1500">
+        <h1> <b> Conclusion</b> </h1>
+        <hr>
+        <br>
+        <li>Aggregation Framework is very powerful if your main concern is doing just simple aggregation tasks.</li>
+        <br>
+        <li>It is not a replacement for MapReduce but just an alternative.</li>
+        <br>
+        <li>Both have their areas of applications so you should choose which suits your needs better.</li>
+    </div>
+
+    <div id="step25" class="step slide" data-x="24000" data-y="-1500">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <b style= "margin-left: 30%; font-size: 60px;">Thank you</b>
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
+
