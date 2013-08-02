@@ -4,9 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use postgresql as the database for Active Record
-group 'production' do
-  gem 'thin'
-  gem 'pg'
+
+group :production do
+    gem 'thin'
+    gem 'pg'
 end
 
 # Use SCSS for stylesheets
