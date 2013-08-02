@@ -323,6 +323,7 @@
         <hr>
         <br> 
         <strong>MAPREDUCE</strong>
+        <br>
         <br>2.0.0-p195 :014 > mapFn = "function() {emit(this.state, this.pop);};"
         <br> => "function() {emit(this.state, this.pop);};" 
         <br> 2.0.0-p195 :015 > 
@@ -336,9 +337,9 @@
     <div id="step19" class="step slide" data-x="18000" data-y="-1500">
         <h1> <b>Benchmark Results </b> </h1>
         <hr>
-        <br>
         <br><strong>AGGREGATION FRAMEWORK</strong>
-        2.0.0p195 :084 > Benchmark.realtime{coll.aggregate([{"$group"=> {"_id"=> "$state", "total"=> {"$sum"=> "$pop"}}}])}
+        <br> 
+        <br>2.0.0p195 :084 > Benchmark.realtime{coll.aggregate([{"$group"=> {"_id"=> "$state", "total"=> {"$sum"=> "$pop"}}}])}
         <br>=> 0.055333919 
     </div>
         
@@ -361,7 +362,7 @@
     <div id="step21" class="step slide" data-x="20000" data-y="-1500">
         <h1> <b>Benchmark Comparison</b> </h1>
         <hr>
-        <br>After inserting 100k records
+        After inserting 100k records
         <br>
         <br><strong>MAPREDUCE: </strong>
         <br>=> 2.791563706
@@ -373,6 +374,7 @@
         <br>
         
         <br>After inserting 500k records
+        <br>
         <br><strong>MAPREDUCE: </strong>
         <br>=> 13.038614068
 
